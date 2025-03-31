@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <!-- Gradient nền cho item -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_item"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Icon trang trí -->
+            <ImageView
+                android:id="@+id/staffIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_info_details"
+                android:tint="#78909C"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/staffNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Tên cán bộ"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/staffIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnEdit" />
+
+            <TextView
+                android:id="@+id/staffUnitTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Đơn vị: Tên đơn vị"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/staffIcon"
+                app:layout_constraintTop_toBottomOf="@id/staffNameTextView"
+                app:layout_constraintEnd_toStartOf="@id/btnEdit" />
+
+            <TextView
+                android:id="@+id/staffPhoneTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="SĐT: 123456789"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/staffIcon"
+                app:layout_constraintTop_toBottomOf="@id/staffUnitTextView"
+                app:layout_constraintEnd_toStartOf="@id/btnEdit" />
+
+            <TextView
+                android:id="@+id/staffEmailTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Email: email@example.com"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/staffIcon"
+                app:layout_constraintTop_toBottomOf="@id/staffPhoneTextView"
+                app:layout_constraintEnd_toStartOf="@id/btnEdit" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEdit"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconTint="#78909C"
+                app:strokeColor="#B0BEC5"
+                app:layout_constraintEnd_toStartOf="@id/btnDelete"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconTint="#EF5350"
+                app:strokeColor="#EF5350"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

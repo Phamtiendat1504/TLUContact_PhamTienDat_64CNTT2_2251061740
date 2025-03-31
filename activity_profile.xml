@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient_toolbar"
+        android:elevation="6dp"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:title="Thông tin tài khoản"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- CardView chứa thông tin tài khoản -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Avatar -->
+            <ImageView
+                android:id="@+id/profileAvatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/account_circle_24dp_1f1f1f_fill0_wght400_grad0_opsz24"
+                android:tint="#78909C"
+                android:contentDescription="Avatar" />
+
+            <!-- Tên người dùng -->
+            <TextView
+                android:id="@+id/profileNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nguyễn Văn A"
+                android:textColor="#212121"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/profileEmailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nva@tlu.edu.vn"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Mã sinh viên -->
+            <TextView
+                android:id="@+id/profileStudentIdTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã sinh viên: 12345678"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Số điện thoại -->
+            <TextView
+                android:id="@+id/profilePhoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SĐT: 024 3865 1001"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Nút chỉnh sửa và đăng xuất -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditProfile"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chỉnh sửa"
+                    android:textColor="#78909C"
+                    app:strokeColor="#B0BEC5"
+                    app:icon="@android:drawable/ic_menu_edit"
+                    app:iconTint="#78909C"
+                    android:layout_marginEnd="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đăng xuất"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#D32F2F"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_lock_power_off" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

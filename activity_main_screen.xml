@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@drawable/creative_background">
+
+    <!-- Container chính rộng hơn, thoáng hơn -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="16dp"
+        app:layout_constraintWidth_percent="0.95"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#FFFFFF"
+        android:layout_margin="32dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="60dp">
+
+            <!-- Logo lớn hơn và bo tròn đẹp hơn -->
+            <ImageView
+                android:id="@+id/mainImageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/logo_dh_thuy_loi"
+                android:contentDescription="Logo Đại học Thủy Lợi"
+                android:scaleType="centerInside"
+                android:background="@drawable/circle_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:elevation="6dp" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TLU Contact"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:letterSpacing="0.05"
+                app:layout_constraintTop_toBottomOf="@id/mainImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp" />
+
+            <!-- Nút Danh bạ đơn vị rộng hơn -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDanhBaDonVi"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="Danh bạ đơn vị"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                app:cornerRadius="35dp"
+                app:backgroundTint="#3949AB"
+                app:rippleColor="#80CBC4"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                android:layout_marginTop="40dp"
+                android:elevation="8dp" />
+
+            <!-- Nút Danh bạ CBNV rộng hơn -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDanhBaCBNV"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="Danh bạ CBNV"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                app:cornerRadius="35dp"
+                app:backgroundTint="#1976D2"
+                app:rippleColor="#81D4FA"
+                app:layout_constraintTop_toBottomOf="@id/btnDanhBaDonVi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                android:layout_marginTop="20dp"
+                android:elevation="8dp" />
+
+            <!-- Nút Thông tin tài khoản -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProfile"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="Thông tin tài khoản"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                app:cornerRadius="35dp"
+                app:backgroundTint="#0288D1"
+                app:rippleColor="#4FC3F7"
+                app:layout_constraintTop_toBottomOf="@id/btnDanhBaCBNV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Điểm nhấn sáng tạo: Hình tròn mờ phía sau mở rộng -->
+    <View
+        android:id="@+id/backgroundCircle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/circle_accent"
+        app:layout_constraintTop_toTopOf="@id/mainContainer"
+        app:layout_constraintBottom_toBottomOf="@id/mainContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha="0.12" />
+</androidx.constraintlayout.widget.ConstraintLayout>
